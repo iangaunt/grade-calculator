@@ -1,0 +1,202 @@
+@import "https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Manrope:wght@200&display=swap";
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+* {
+    font-family: "Manrope";
+    font-size: 35px;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+$bg: #eeeeef;
+
+$white: #fff;
+$black: #000;
+
+$green: #b7da9b;
+$green-dark: rgb(121, 143, 102);
+$blue: #527ca6;
+$blue-dark: #2d445b;
+$grey: #cdcfd2;
+
+body {
+    background: $bg;
+    overflow-x: hidden;
+}
+
+main {
+    @include flex;
+    
+    align-items: start;
+    background: $bg;
+    height: 100vh;
+    width: 100vw;
+
+    .container {
+        @include flex;
+
+        justify-content: start;
+        flex-direction: column;
+        margin-top: 10vh;
+        width: 50%;
+
+        #title-box {
+            @include flex;
+
+            background: $white;
+            border-top: 5px $grey solid;
+            flex-direction: column;
+            height: 17vh;
+            width: 80%;
+            
+            h2 {
+                @include flex;
+
+                font-size: 40%;
+                height: 40%;
+                width: 75%;
+            }
+
+            hr {
+                background: $grey;
+                margin: 2px;
+                width: 80%;
+            }
+        }
+
+        #input {
+            height: 32vh;
+            width: 80%;
+
+            #instructions {
+                @include flex;
+                height: 32%;
+                width: 100%;
+
+                h2 {
+                    font-size: 45%;
+                    height: 60%;
+                    margin-bottom: -30px;
+                    width: 80%;
+
+                    b {
+                        font-size: 100%;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            input {
+                border: 1px $grey solid;
+                border-radius: 12px;
+                font-size: 40%;
+                height: 22%;
+                width: 100%;
+            }
+
+            button {
+                border: 0px;
+                border-bottom: 2px $green-dark solid;
+                border-radius: 15px;
+                border-right: 2px $green-dark solid;
+                background: $green;
+                color: white;
+                font-size: 60%;
+                height: 20%;
+                margin: 5px;
+                transition-duration: 0.2s;
+                width: 50%;
+
+                &:hover {
+                    background: $blue;
+                    border-bottom: 2px $blue-dark solid;
+                    border-right: 2px $blue-dark solid;
+                    width: 45%;
+                }
+            }
+        }
+
+        #grade-contents {
+            height: fit-content;
+            width: 80%;
+
+            .category {
+                margin-bottom: 20px;
+                width: 100%;
+
+                .title {
+                    @include flex;
+
+                    background: $white;
+                    border-top: 5px $blue solid;
+                    flex-direction: row;
+                    height: 7vh;
+                    width: 100%;
+
+                    h1 {
+                        @include flex;
+
+                        font-size: 80%;
+                        width: 55%;
+
+                        p {
+                            text-shadow: 0px 0px 5px $green-dark;
+                            color: $green-dark;
+                            font-size: 80%;
+                            margin-left: 10px;
+                        }
+                    }
+
+                    h2 { 
+                        font-size: 60%;
+                        width: 15% 
+                    }
+                    
+                    input { 
+                        border: 1px $grey solid;
+                        border-radius: 12px;
+                        font-size: 70%;
+                        width: 10% 
+                    }
+                }
+                
+                .grade {
+                    @include flex;
+
+                    background: $bg;
+                    height: 6vh;
+
+                    .name {
+                        font-size: 60%;
+                        width: 50%;
+                    }
+
+                    .score, .total {
+                        border: 1px $grey solid;
+                        border-radius: 12px;
+                        font-size: 70%;
+                        width: 15%;
+                    }
+
+                    &:nth-of-type(odd) {
+                        background: $grey;
+                    }
+                }
+            }
+        }
+
+        #results {
+            background: $green;
+            height: 30vh;
+            width: 80%;
+        }
+    }
+}

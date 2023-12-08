@@ -1,0 +1,94 @@
+/*!*********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/style.css ***!
+  \*********************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Manrope:wght@200&display=swap);
+/*!*************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/style.css (1) ***!
+  \*************************************************************************/
+* {
+  font-family: "Manrope";
+  font-size: 35px;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eeeeef;
+  height: 100vh;
+  width: 100vw;
+}
+main .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  height: 80vh;
+  width: 50%;
+}
+main .container #title-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-top: 5px #cdcfd2 solid;
+  flex-direction: column;
+  height: 20vh;
+  width: 80%;
+}
+main .container #title-box h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40%;
+  height: 40%;
+  width: 75%;
+}
+main .container #title-box hr {
+  background: #cdcfd2;
+  margin: 2px;
+  width: 80%;
+}
+main .container #input {
+  height: 40vh;
+  width: 80%;
+}
+main .container #input #instructions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  width: 100%;
+}
+main .container #input #instructions h2 {
+  font-size: 50%;
+  height: 60%;
+  margin-bottom: -10px;
+  width: 50%;
+}
+main .container #input #instructions img {
+  width: 50%;
+}
+main .container #input input {
+  border: 1px #cdcfd2 solid;
+  border-radius: 12px;
+  font-size: 30%;
+  height: 30%;
+  width: 100%;
+}
+main .container #grade-contents {
+  background: #527ca6;
+  width: 100%;
+}
+main .container #results {
+  background: #b7da9b;
+  height: 30vh;
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
+
+/*# sourceMappingURL=main.css.map*/
