@@ -3,20 +3,26 @@ import React from "react";
 import Title from "./Title"
 import Grade from "./Grade"
 
-function showElements(elements: Array<JSX.Element>) {
-    for (let i = 1; i < elements.length; i++) {
-        let grade = elements[i];
-        let score = grade.props.score;
+function showElements(id: string) {
+    let elem = document.getElementById(id);
+    let scoreElements: Array<HTMLInputElement> = Array.from(elem.getElementsByClassName("score")) as Array<HTMLInputElement>;
+    let totalElements: Array<HTMLInputElement> = Array.from(elem.getElementsByClassName("total")) as Array<HTMLInputElement>;
 
-        console.log(grade.key);
+    let score: number = 0, total: number = 0;
+    for (let i = 0; i < scoreElements.length; i++) {
+        score += parseInt(scoreElements[i].value);
+        total += parseInt(totalElements[i].value);
     }
+
+    elem.getElementsByClassName("percentage")[0].innerHTML = Math.round((score / total) * 10000) / 100 + "%";
 }
 
 export default function Category(props: {
-    elements: Array<JSX.Element>
+    elements: Array<JSX.Element>,
+    id: string
 }) {
     return (
-        <div className="category" onMouseDown={() => showElements(props.elements)}>
+        <div id={props.id} className="category" onClick={() => showElements(props.id)} onLoad={() => showElements(props.id)}>
             {props.elements}
         </div>
     )
